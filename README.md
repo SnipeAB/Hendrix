@@ -48,13 +48,13 @@ Wordlist path may need adjustment for your system
 ```bash
     git clone https://github.com/SnipeZoidYT/Hendrix.git
     cd Hendrix
+    cd Scanner
     # Install dependencies:
     sudo apt install nmap gobuster seclists
-    dotnet build
 ```
 # Usage 🖥️
 ```bash
-    dotnet run
+    sudo ./Hendrix
 ```
 
 ## Legal Disclaimer ⚖️
