@@ -51,10 +51,12 @@ Wordlist path may need adjustment for your system
     cd Scanner
     # Install dependencies:
     sudo apt install nmap gobuster seclists
+    sudo apt-get install -y mono-mcs
 ```
 # Usage 🖥️
 ```bash
-    sudo ./Hendrix
+    mcs -out:Program.exe Program.cs
+    mono Program.exe
 ```
 
 ## Legal Disclaimer ⚖️
