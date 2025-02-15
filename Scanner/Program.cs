@@ -43,7 +43,7 @@ namespace Scanner
                 ProcessStartInfo startInfo = new ProcessStartInfo
                 {
                     FileName = "gobuster",
-                    Arguments = $" dir -u {scan} -w /usr/share/SecLists/Discovery/Web-Content/common.txt",
+                    Arguments = $" dir -u {scan} -w /usr/share/seclists/Discovery/Web-Content/common.txt",
                     RedirectStandardOutput = true,
                     UseShellExecute = false,
                     CreateNoWindow = true
