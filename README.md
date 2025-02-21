@@ -46,20 +46,23 @@ Wordlist path may need adjustment for your system
 
 # Installation ⚙️
 ```bash
-    git clone https://github.com/SnipeZoidYT/Hendrix.git
+    git clone https://github.com/yourrepo/Hendrix.git
     cd Hendrix
-    cd Scanner
     # Install dependencies:
     sudo apt install nmap gobuster seclists
-    sudo apt-get install -y mono-mcs
+    dotnet build
 ```
 # Usage 🖥️
 ```bash
-    mcs -out:Program.exe Program.cs
-    mono Program.exe
+    dotnet run
 ```
 
 ## Legal Disclaimer ⚖️
 
 This tool is intended for authorized security testing and educational purposes only. Unauthorized network scanning may violate local/international laws. Developers assume no liability for misuse.
+
+
+## Screenshots
+
+![](https://github.com/SnipeZoidYT/Hendrix/blob/master/Screenshot%202025-02-21%20051034.png)
 
