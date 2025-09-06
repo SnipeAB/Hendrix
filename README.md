@@ -46,7 +46,7 @@ Wordlist path may need adjustment for your system
 
 # Installation ⚙️
 ```bash
-    git clone https://github.com/yourrepo/Hendrix.git
+    git clone https://github.com/SnipeAB/Hendrix.git
     cd Hendrix
     # Install dependencies:
     sudo apt install nmap gobuster seclists
